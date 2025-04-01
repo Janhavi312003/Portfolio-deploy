@@ -1,0 +1,21 @@
+export const skillsData = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'NextJS',
+    'Svelte',
+    'Tailwind',
+    'MySQL',
+    'Prisma',
+    'Git',
+    'Figma',
+    'Jira',
+    'Canva',
+    'Vercel',
+    'Postgresql',
+    'ViteJS',
+    'Solidity',
+    'NodeJS',
+    'Hardhat'
+]

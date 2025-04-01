@@ -1,0 +1,12 @@
+export const personalData = {
+    name: "Janhavi Sonurkar",
+    profile: "/profile.png",
+    designation: "Based in India",
+    description: " I am a blockchain developer and frontend developer, actively exploring the world of Web3. My expertise includes building decentralized applications and leveraging blockchain technology to create innovative solutions.",
+    experience: "fghvtdrtdfyjgjhkmljkn htdred465trgh7uihn hgvtufgvbyujhh",
+    award: "Certificate of Achievement ",
+    github: "https://github.com/Janhavi312003",
+    linkedIn: "https://www.linkedin.com/in/janhavi-sonurkar-134a70288",
+    twitter: "https://x.com/JSonurkar?t=cWLuVoRFXC3hD3r6TxbzJw&s=09",
+    resume: ""
+}
