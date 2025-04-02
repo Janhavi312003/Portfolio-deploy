@@ -1,8 +1,9 @@
-"use client"
+"use client";
 import React, { children, useEffect } from 'react'
 
 const GlowCard = ({ children, identifier}) => {
     useEffect(() => {
+        if (typeof window === "undefined") return;
         const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
         const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
 
@@ -14,7 +15,7 @@ const GlowCard = ({ children, identifier}) => {
             blur: 12,
             gap: 32,
             vertical: false,
-            opacity: 0.5,
+            opacity: 0,
         };
 
         const UPDATE = (event) => {
