@@ -17,7 +17,7 @@ import postgresql from '/public/svg/skills/postgresql.svg';
 import solidity from '/public/svg/skills/solidity.svg';
 import nodejs from '/public/svg/skills/nodejs.svg';
 import hardhat from '/public/svg/skills/hardhat.svg';
-import next from '/public/svg/skills/next.svg';
+// import next from '/public/svg/skills/next.svg';
 
 
 
@@ -42,8 +42,8 @@ export const skillsImage = (skill) => {
             return mysql;
         case 'vitejs':
             return vitejs;
-        case 'next':
-                return next; 
+        // case 'next':
+        //         return next; 
         case 'git':
                 return git;  
         case 'figma':
