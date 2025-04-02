@@ -44,8 +44,8 @@ function Education() {
 
                         <div>
                           <p className='text-pink-400 sm:text-xl mt-3 font-medium'>{education.title}</p>
-                          <p className='text-sm sm:text-[#06E7ED] !leading-8 mt-3'>{education.company}</p>
-                          <p className='text-sm sm:text-white !leading-8 mt-3'>{education.service}</p>
+                          <p className='text-[#06E7ED] sm:text-[#06E7ED] !leading-8 mt-3'>{education.company}</p>
+                          <p className=' text-white sm:text-white !leading-8 mt-3'>{education.service}</p>
                         </div>
 
                         <div>

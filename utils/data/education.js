@@ -13,15 +13,15 @@ export const offers = [
         duration: "4 Month",
         service: "Develop a full-stack decentralized news portal leveraging the BSV blockchain for secure news publishing and payment gateways, Designed and implemented user profiles to manage wallet balances and subscriptions using smart contracts for dynamic calculations, Built using SvelteKit,TypeScript and PostgreSQL. Integrated Nucron Wallet for secure blockchain payments and successfully deployed on Vercel.",
     },
+    // {
+    //     id:3,
+    //     title: "Rookie Developer",
+    //     company: 'Timchain Labs',
+    //     duration: "4 Month",
+    //     service: "In this phase we learn about svelte,NestJS, wallet intergration & created the todo application and sveltelit application for example and deployed on vercel.",
+    // },
     {
         id:3,
-        title: "Rookie Developer",
-        company: 'Timchain Labs',
-        duration: "4 Month",
-        service: "In this phase we learn about svelte,NestJS, wallet intergration & created the todo application and sveltelit application for example and deployed on vercel.",
-    },
-    {
-        id:4,
         title: "Season 12 Scholar",
         company: 'SheFi',
         duration: "Learn More",
