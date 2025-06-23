@@ -4,6 +4,7 @@ export const personalData = {
     designation: "Based in India",
     description: " I am a blockchain developer and frontend developer, actively exploring the world of Web3. My expertise includes building decentralized applications and leveraging blockchain technology to create innovative solutions.",
     experience: "fghvtdrtdfyjgjhkmljkn htdred465trgh7uihn hgvtufgvbyujhh",
+    about: "I'm a passionate Frontend and Blockchain Developer currently pursuing my Master's in Blockchain Technology. With a strong foundation in frontend development and a growing expertise in decentralized technologies, I'm actively exploring the Web3 ecosystem. I'm enthusiastic about building innovative, secure, and user-centric applications on the blockchain.I'm currently seeking opportunities in the Web3 space where I can contribute, learn, and grow alongside a forward-thinking team shaping the future of the decentralized web.",
     award: "Certificate of Achievement ",
     github: "https://github.com/Janhavi312003",
     linkedIn: "https://www.linkedin.com/in/janhavi-sonurkar-134a70288",

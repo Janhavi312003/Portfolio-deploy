@@ -42,7 +42,7 @@ function AboutSection() {
 
           <Fade direction='left' delay={400} cascade damping={1e-1} triggerOnce={true}>
            <p className='text-gray-200 text-sm lg:text-lg !leading-10'>
-              {personalData.description}
+              {personalData.about}
             </p>
           </Fade>
 
