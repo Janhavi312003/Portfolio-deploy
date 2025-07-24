@@ -43,7 +43,7 @@ function ContactSection() {
                   </p>
 
                   {/* Forms */}
-                  <div className='mt-6 flex flex-col gap-4'>
+                  {/* <div className='mt-6 flex flex-col gap-4'>
                     <div className='flex flex-col gap-2'>
                         <label className='text-base'>Your Name: </label>
                         <input 
@@ -85,7 +85,67 @@ function ContactSection() {
                           </button>
                         </Link>
                     </div>
-                  </div>
+                  </div> */}
+                  <form 
+  action="https://api.web3forms.com/submit" 
+  method="POST"
+  className='mt-6 flex flex-col gap-4'
+>
+  {/* Access Key */}
+  <input type="hidden" name="access_key" value="43e127fb-fb4a-4255-8a25-dfb868286c33" />
+
+  {/* Name */}
+  <div className='flex flex-col gap-2'>
+    <label className='text-base'>Your Name:</label>
+    <input 
+      type='text'
+      name='name'
+      maxLength={100}
+      required
+      className='w-full bg-[#10172d] border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2'
+    />
+  </div>
+
+  {/* Email */}
+  <div className='flex flex-col gap-2'>
+    <label className='text-base'>Your Email:</label>
+    <input 
+      type='email'
+      name='email'
+      maxLength={100}
+      required
+      className='w-full bg-[#10172d] border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2'
+    />
+  </div>
+
+  {/* Message */}
+  <div className='flex flex-col gap-2'>
+    <label className='text-base'>Your Message:</label>
+    <textarea 
+      name='message'
+      maxLength={500}
+      required
+      rows="4"
+      className='w-full bg-[#10172d] border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2'
+    />
+  </div>
+
+  {/* Submit */}
+  <div className='flex flex-col items-center gap-2 mt-6'>
+    <button 
+      type="submit"
+      className='bg-gradient-to-r to-pink-500 from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600'
+    >
+      <span className='px-3 text-xs md:px-8 py-3 md:py-4 rounded-full border-none text-center md:text-sm 
+                       font-medium uppercase tracking-wider text-[#ffff] bg-[#0d1224] no-underline transition-all duration-200 
+                       ease-out md:font-semibold flex items-center gap-1 hover:gap-3'>
+        Contact Me
+        <TbMailForward size={16} />
+      </span>
+    </button>
+  </div>
+</form>
+
                </div>
 
                <div className='flex items-center gap-5 lg:gap-10'>
