@@ -4,6 +4,7 @@ import AboutSection from "./components/homepage/hero-section/about";
 import Skills from "./components/homepage/skills";
 import Education from "./components/homepage/education";
 import ContactSection from "./components/homepage/contact";
+import Projects from "./components/homepage/projects";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
     {/* <Experience /> */}
     <Skills />
     <Education />
+    <Projects />
     <ContactSection />
    </>
   );

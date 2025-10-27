@@ -61,6 +61,15 @@ function navbar()  {
                  </li>
 
                  <li>
+                    <Link href="/#projects">
+                     <div className="text-white text-sm transition-colors 
+                       duration-300 hover:text-pink-600">
+                       PROJECTS
+                     </div>
+                   </Link>
+                 </li>
+
+                 <li>
                    <Link href="#contact">
                      <div className="text-white text-sm transition-colors 
                        duration-300 hover:text-pink-600">
