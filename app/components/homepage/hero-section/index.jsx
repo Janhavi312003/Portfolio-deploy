@@ -32,7 +32,7 @@ const HeroSection = () => {
            <Fade direction='up' delay={400} cascade damping={1e-1} triggerOnce={true}>
               <h1 className='text-3xl font-bold leading-10 md:font-extrabold md:text-[2.6rem] lg:leading-[3.5rem]'>
                   <span className='text-pink-500 text-[14px] uppercase tracking-widest'>[ {personalData.name} ]</span><br />
-                    { `Frontend & Blockchain Developer`}<br />
+                    {/* { `Frontend & Blockchain Developer`}<br /> */}
                   <span className='text-[#16f2b3]'>{personalData.designation}</span>
               </h1>
            </Fade>

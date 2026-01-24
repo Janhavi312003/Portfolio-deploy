@@ -34,5 +34,24 @@ export const projects = [
     repo: 'https://github.com/Janhavi312003/Portfolio-deploy',
     live: 'https://portfolio-tau-eight-23.vercel.app/',
     techStack: ['Next.js', 'JavaScript']
-  }
+  },
+  {
+    id: 5,
+    name: 'ChainPay',
+    description: 'A blockchain‑based payment application that enables secure and transparent transactions using smart contracts, exploring decentralized payment workflows.',
+    image: '/svg/Chainpay.jpg',
+    repo: 'https://github.com/Janhavi312003/ChainPay',
+    live: 'https://chain-pay-15p3.vercel.app/',
+    techStack: ['Blockchain', 'Solidity', 'Web3.js', 'JavaScript']
+  },
+  {
+  id: 6,
+    name: 'Weather App',
+    description: 'A weather application that fetches real-time weather data using public APIs and displays current conditions with a clean and responsive UI.',
+    image: '/svg/weather.jpg',
+    repo: 'https://github.com/Janhavi312003/Weather-App',
+    live: 'https://weather-phi-eight-12.vercel.app/',
+    techStack: ['JavaScript', 'HTML', 'CSS', 'Weather API']
+  },
+
 ];
