@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project Tailwindcss with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Janhavi Sonurkar — Portfolio
 
-## Getting Started
+Personal portfolio for **Janhavi Sonurkar**, Full Stack & Blockchain Developer. Built to showcase projects, experience, and skills for Full Stack / Web3 roles.
 
-First, run the development server:
+**Live site:** [https://portfolio-tau-eight-23.vercel.app](https://portfolio-tau-eight-23.vercel.app)
+
+## Tech stack
+
+- [Next.js](https://nextjs.org) 15 (App Router)
+- [React](https://react.dev) 19
+- [Tailwind CSS](https://tailwindcss.com) v4
+- [Framer Motion](https://www.framer.com/motion/)
+- [Lucide React](https://lucide.dev) icons
+- Deployed on [Vercel](https://vercel.com)
+
+## Getting started
 
 ```bash
+# Install dependencies
+npm install
+
+# Copy env example and fill in your Web3Forms key
+cp .env.example .env.local
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Start local dev server   |
+| `npm run build` | Production build         |
+| `npm run start` | Serve production build   |
+| `npm run lint`  | Run ESLint               |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/` — App Router pages (`/`, `/projects/[slug]`)
+- `components/` — UI sections (Hero, About, Skills, Experience, Projects, Contact, Footer)
+- `utils/data/` — Editable content (personal data, projects, skills, experience)
+- `public/` — Static assets (photos, resume PDF, skill icons)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Replace `public/about-photo.jpg` and `public/hero-photo.jpg` with your real portraits if needed.
+- Set `email` in `utils/data/personal-data.js` to your real address.
+- Replace the AgriChain GitHub placeholder in `utils/data/projects.js` with the real repo URL.
+- Contact form uses [Web3Forms](https://web3forms.com) — set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` in `.env.local`.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private portfolio project.
