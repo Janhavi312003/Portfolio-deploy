@@ -9,20 +9,31 @@ module.exports = {
     extend: {
       colors: {
         canvas: {
-          DEFAULT: '#0A0A0F',
-          soft: '#0B0F19',
-          elevated: '#111827',
+          DEFAULT: '#1A1622',
+          soft: '#221C2A',
+          elevated: '#2A2430',
+        },
+        surface: {
+          DEFAULT: '#2A2430',
+          raised: '#352E3C',
         },
         accent: {
-          violet: '#8B5CF6',
-          blue: '#3B82F6',
-          cyan: '#22D3EE',
-          fuchsia: '#D946EF',
+          DEFAULT: '#FF7A59',
+          coral: '#FF7A59',
+          gold: '#FFC65C',
+          warm: '#FFC65C',
+          // legacy aliases during rollout
+          violet: '#FF7A59',
+          blue: '#FF7A59',
+          electric: '#FF8F6E',
+          cyan: '#FFC65C',
+          magenta: '#FF9A78',
+          fuchsia: '#FF9A78',
         },
         ink: {
-          DEFAULT: '#F8FAFC',
-          muted: '#CBD5E1',
-          dim: '#94A3B8',
+          DEFAULT: '#F5F0EA',
+          muted: '#C9C0B6',
+          dim: '#8F867C',
         },
       },
       maxWidth: {
@@ -42,9 +53,9 @@ module.exports = {
         pill: '9999px',
       },
       boxShadow: {
-        glass: '0 8px 32px rgba(0, 0, 0, 0.35)',
-        glow: '0 0 24px rgba(139, 92, 246, 0.35)',
-        'glow-cyan': '0 0 24px rgba(34, 211, 238, 0.3)',
+        glass: '0 14px 40px rgba(12, 8, 16, 0.45)',
+        glow: '0 0 28px rgba(255, 122, 89, 0.35)',
+        'glow-cyan': '0 0 28px rgba(255, 198, 92, 0.28)',
       },
       fontSize: {
         'display': ['3.5rem', { lineHeight: '1.1', fontWeight: '700', letterSpacing: '-0.02em' }],
@@ -53,9 +64,9 @@ module.exports = {
       },
       backgroundImage: {
         'accent-gradient':
-          'linear-gradient(135deg, #8B5CF6 0%, #D946EF 50%, #22D3EE 100%)',
+          'linear-gradient(135deg, #FF7A59 0%, #FFC65C 100%)',
         'accent-gradient-soft':
-          'linear-gradient(135deg, rgba(139,92,246,0.2), rgba(34,211,238,0.15))',
+          'linear-gradient(135deg, rgba(255,122,89,0.22), rgba(255,198,92,0.12))',
       },
       transitionDuration: {
         fast: '150ms',

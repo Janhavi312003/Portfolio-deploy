@@ -1,201 +1,181 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { Mail, LayoutGrid, Github, Linkedin } from "lucide-react";
+import dynamic from "next/dynamic";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { personalData } from "@/utils/data/personal-data";
-import HeroInteractiveBackground from "@/components/HeroInteractiveBackground";
+import LiquidGlassBackground from "@/components/LiquidGlassBackground";
 
-function XIcon({ size = 16 }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="currentColor"
+const HeroNetworkForm = dynamic(() => import("@/components/HeroNetworkForm"), {
+  ssr: false,
+  loading: () => (
+    <div
+      className="mx-auto aspect-square w-full max-w-[16rem] rounded-[2rem] bg-surface/60 sm:max-w-[22rem]"
       aria-hidden="true"
-    >
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.227-8.451L1.99 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
-    </svg>
-  );
-}
+    />
+  ),
+});
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: (i = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, delay: 0.12 * i, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+const ease = [0.16, 1, 0.3, 1];
 
-function TypewriterRoles({ roles }) {
-  const [index, setIndex] = useState(0);
-  const [reduced, setReduced] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(mq.matches);
-    const onChange = (e) => setReduced(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-
-  useEffect(() => {
-    if (reduced || roles.length < 2) return;
-    const id = setInterval(() => {
-      setIndex((i) => (i + 1) % roles.length);
-    }, 2800);
-    return () => clearInterval(id);
-  }, [roles, reduced]);
+function MagneticHeadline({ children }) {
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const sx = useSpring(mx, { stiffness: 120, damping: 18 });
+  const sy = useSpring(my, { stiffness: 120, damping: 18 });
+  const x = useTransform(sx, (v) => v * 6);
+  const y = useTransform(sy, (v) => v * 4);
 
   return (
-    <span className="relative inline-flex min-h-[1.3em] items-center overflow-hidden align-bottom">
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={roles[index]}
-          className="text-gradient"
-          initial={reduced ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={reduced ? undefined : { opacity: 0, y: -12 }}
-          transition={{ duration: 0.35 }}
-        >
-          {roles[index]}
-        </motion.span>
-      </AnimatePresence>
-    </span>
+    <motion.h1
+      className="hero-headline font-display m-0 font-bold tracking-[-0.03em] text-ink"
+      style={{ x, y }}
+      initial={{ opacity: 0, y: 36, rotate: -1 }}
+      animate={{ opacity: 1, y: 0, rotate: 0 }}
+      transition={{ duration: 0.75, delay: 0.12, ease }}
+      onPointerMove={(e) => {
+        if (window.matchMedia("(pointer: coarse)").matches) return;
+        const rect = e.currentTarget.getBoundingClientRect();
+        mx.set((e.clientX - rect.left) / rect.width - 0.5);
+        my.set((e.clientY - rect.top) / rect.height - 0.5);
+      }}
+      onPointerLeave={() => {
+        mx.set(0);
+        my.set(0);
+      }}
+    >
+      {children}
+    </motion.h1>
   );
 }
 
 export default function Hero() {
+  const headline =
+    personalData.heroHeadline || "FULL-STACK BY TRADE. BLOCKCHAIN BY CHOICE.";
+  const accent = personalData.heroAccent || "WEB × WEB3 × AI";
+
   return (
-    <HeroInteractiveBackground className="relative flex min-h-[100svh] items-center overflow-x-hidden section-pad pt-24 md:pt-28">
-      <section className="w-full min-w-0" aria-label="Hero">
-        <div className="container-content">
-          <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="order-2 flex min-w-0 flex-col items-start text-left lg:order-1">
-              <motion.p
-                className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-accent-cyan sm:text-sm"
-                variants={fadeUp}
-                initial="hidden"
-                animate="show"
-                custom={0}
-              >
-                Open to work · Full Stack / Web3
-              </motion.p>
+    <section
+      className="relative flex min-h-[100svh] items-center overflow-x-hidden overflow-y-hidden pt-24 pb-16 md:pt-28 md:pb-20"
+      aria-label="Hero"
+    >
+      <LiquidGlassBackground />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(26,22,34,0.4)_72%,rgba(26,22,34,0.8)_100%)]" />
 
-              <motion.h1
-                className="text-3xl font-bold tracking-tight text-ink sm:text-5xl md:text-display-sm lg:text-display"
-                variants={fadeUp}
-                initial="hidden"
-                animate="show"
-                custom={1}
-              >
-                {personalData.name}
-              </motion.h1>
+      <div className="container-content relative z-10 grid w-full min-w-0 items-center gap-8 sm:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
+        <div className="min-w-0">
+          <motion.p
+            className="eyebrow mb-5 sm:mb-6"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease }}
+          >
+            Portfolio · 2026
+          </motion.p>
 
-              <motion.h2
-                className="mt-3 text-lg font-semibold text-ink-muted sm:mt-4 sm:text-2xl md:text-3xl"
-                variants={fadeUp}
-                initial="hidden"
-                animate="show"
-                custom={2}
-              >
-                <TypewriterRoles roles={personalData.roles} />
-              </motion.h2>
+          <MagneticHeadline>{headline}</MagneticHeadline>
 
-              <motion.p
-                className="hero-description mt-5 max-w-xl text-sm leading-relaxed text-gray-300 sm:mt-6 sm:text-[1rem] md:text-lg md:leading-8"
-                variants={fadeUp}
-                initial="hidden"
-                animate="show"
-                custom={3}
-              >
-                {personalData.description}
-              </motion.p>
+          <motion.p
+            className="font-display mt-3 text-[clamp(1.05rem,3.5vw,1.75rem)] font-semibold tracking-[-0.02em] sm:mt-4"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.22, ease }}
+          >
+            <span className="text-gradient">{accent}</span>
+          </motion.p>
 
-              <motion.div
-                className="mt-7 flex w-full flex-wrap items-center gap-3 sm:mt-8 sm:gap-4"
-                variants={fadeUp}
-                initial="hidden"
-                animate="show"
-                custom={4}
-              >
-                <a href="#contact" className="btn-primary">
-                  <Mail size={16} strokeWidth={2} />
-                  Contact me
-                </a>
-                <a href="#projects" className="btn-secondary">
-                  <LayoutGrid size={16} strokeWidth={2} />
-                  View Projects
-                </a>
-              </motion.div>
+          <motion.div
+            className="mt-7 space-y-2 sm:mt-9"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.35, ease }}
+          >
+            <p className="font-display text-base font-semibold tracking-[0.06em] text-ink uppercase sm:text-lg">
+              {personalData.name}
+            </p>
+            <p className="font-mono-accent text-[0.7rem] font-medium tracking-[0.12em] text-accent-gold uppercase sm:text-xs">
+              {personalData.designation}
+            </p>
+          </motion.div>
 
-              <motion.div
-                className="mt-7 flex items-center gap-3 sm:mt-8"
-                variants={fadeUp}
-                initial="hidden"
-                animate="show"
-                custom={5}
+          <motion.p
+            className="hero-description mt-4 max-w-md text-sm leading-relaxed sm:mt-5 sm:text-base"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.45, ease }}
+          >
+            {personalData.heroIntro || personalData.description}
+          </motion.p>
+
+          <motion.div
+            className="mt-7 flex flex-wrap items-center gap-3 sm:mt-8"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.55, ease }}
+          >
+            <a href="#projects" className="btn-primary min-h-11" data-cursor="hover">
+              View Work
+            </a>
+            <a href="#contact" className="btn-secondary min-h-11" data-cursor="hover">
+              Contact
+            </a>
+            <div className="ml-0 flex items-center gap-2 sm:ml-1">
+              <a
+                href={personalData.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn !h-11 !w-11"
+                aria-label="GitHub profile"
               >
-                <a
-                  href={personalData.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-btn"
-                  aria-label="GitHub profile"
-                >
-                  <Github size={18} strokeWidth={2} />
-                </a>
-                <a
-                  href={personalData.linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-btn"
-                  aria-label="LinkedIn profile"
-                >
-                  <Linkedin size={18} strokeWidth={2} />
-                </a>
-                <a
-                  href={personalData.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-btn"
-                  aria-label="X (Twitter) profile"
-                >
-                  <XIcon size={16} />
-                </a>
-              </motion.div>
+                <Github size={16} strokeWidth={2} />
+              </a>
+              <a
+                href={personalData.linkedIn}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-btn !h-11 !w-11"
+                aria-label="LinkedIn profile"
+              >
+                <Linkedin size={16} strokeWidth={2} />
+              </a>
+              <a
+                href={`mailto:${personalData.email}`}
+                className="social-btn !h-11 !w-11"
+                aria-label="Email"
+              >
+                <Mail size={16} strokeWidth={2} />
+              </a>
             </div>
-
-            <motion.div
-              className="order-1 flex justify-center lg:order-2"
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <div className="relative">
-                <div
-                  className="absolute -inset-4 rounded-full bg-accent-gradient opacity-30 blur-2xl sm:-inset-6 animate-pulse-glow"
-                  aria-hidden="true"
-                />
-                <div className="relative h-44 w-44 overflow-hidden rounded-full border border-white/15 shadow-glow sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 animate-float">
-                  {/* TODO: replace with /public/hero-photo.jpg — front-facing headshot */}
-                  <Image
-                    src={personalData.heroPhoto}
-                    alt={`${personalData.name} headshot — Full Stack and Blockchain Developer`}
-                    fill
-                    priority
-                    sizes="(max-width: 640px) 176px, (max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
-                    className="object-cover object-top"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          </motion.div>
         </div>
-      </section>
-    </HeroInteractiveBackground>
+
+        <motion.div
+          className="relative mx-auto w-full max-w-[18rem] min-w-0 sm:max-w-lg lg:max-w-none"
+          initial={{ opacity: 0, scale: 0.9, rotate: 3 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.85, delay: 0.2, ease }}
+        >
+          <div
+            className="pointer-events-none absolute inset-6 rounded-[2rem] bg-accent-coral/15 blur-3xl"
+            aria-hidden="true"
+          />
+          <HeroNetworkForm />
+          <p className="font-mono-accent mt-2 text-center text-[0.6rem] tracking-[0.16em] text-ink-dim uppercase sm:mt-3 sm:text-[0.65rem] sm:tracking-[0.18em]">
+            Interactive network form · Web × Web3 × AI
+          </p>
+        </motion.div>
+      </div>
+
+      <a
+        href="#about"
+        className="scroll-cue absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-ink-dim transition-colors hover:text-ink sm:bottom-6"
+        aria-label="Scroll to about section"
+      >
+        <span className="font-mono-accent text-[0.65rem] tracking-[0.2em] uppercase">
+          Scroll
+        </span>
+        <ArrowDown size={14} strokeWidth={2} />
+      </a>
+    </section>
   );
 }

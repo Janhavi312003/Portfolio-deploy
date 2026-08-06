@@ -133,7 +133,7 @@ export default function About() {
               {/* Credibility signal — concrete blockchain proof, same chip row */}
               {/* <span className="rounded-full border border-transparent bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 p-[1px] text-xs font-medium sm:text-sm">
                 <span className="block rounded-full bg-canvas-soft/95 px-4 py-1.5 text-ink-muted backdrop-blur-sm">
-                  3 blockchain projects shipped
+                  3 blockchain projects built
                 </span>
               </span> */}
             </div>

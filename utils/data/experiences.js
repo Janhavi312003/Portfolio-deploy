@@ -1,14 +1,19 @@
+export const experienceArc =
+  "Frontend fundamentals → blockchain-specific engineering → structured Web3 education.";
+
 export const experiences = [
   {
     id: 1,
     title: "Frontend Developer",
     company: "Timchain Labs",
     duration: "3 Months",
+    // First-person reflection — replace "" with your real line (1–2 sentences). Leave empty to hide the quote slot.
+    reflection: "",
     bullets: [
-      "Built responsive UI features with SvelteKit and JavaScript, improving usability across key product flows.",
-      "Shipped Neucron Wallet integration for secure on-chain transactions inside the frontend experience.",
-      "Collaborated in Jira and Figma to iterate UI components and keep design-to-code delivery aligned.",
-      "Connected APIs to power dynamic content updates and smoother data flow across views.",
+      "Owned React UI work across key product flows — responsive layouts and interactions that made core screens usable on real devices.",
+      "Built the Neucron Wallet integration from scratch, giving users a working path to connect and transact on-chain directly from the frontend.",
+      "Collaborated in Jira and Figma to iterate UI components and keep design-to-code handoffs aligned with the team.",
+      "Connected REST APIs to replace static content with live data across the app's core views.",
     ],
   },
   {
@@ -16,11 +21,13 @@ export const experiences = [
     title: "Blockchain Developer",
     company: "Timchain Labs",
     duration: "4 Months",
+    reflection: "",
     bullets: [
-      "Developed a full-stack decentralized news portal on BSV for secure publishing and payment gateways.",
-      "Designed wallet-balance and subscription profiles with smart-contract logic for dynamic calculations.",
-      "Built the stack with SvelteKit, TypeScript, and PostgreSQL, then deployed successfully on Vercel.",
-      "Integrated Neucron Wallet to enable secure blockchain payments for end users.",
+      "Built a full-stack decentralized news portal on BSV with secure publishing and blockchain payment gateways for subscribers.",
+      "Designed wallet-balance and subscription tiers with on-chain smart-contract logic so access stayed tied to payment state, not just database records.",
+      "Built on BSV to stay aligned with Timchain's Neucron Wallet stack — keeping publishing, payments, and wallet flows on one chain instead of splitting them across layers.",
+      "Delivered the stack with SvelteKit, TypeScript, and PostgreSQL, then deployed on Vercel for production demos and stakeholder review.",
+      "Integrated Neucron Wallet so end users could pay for subscriptions with secure on-chain transactions from the app.",
     ],
   },
   {
@@ -28,9 +35,10 @@ export const experiences = [
     title: "Season 12 Scholar",
     company: "SheFi",
     duration: "Season 12",
+    reflection: "",
     bullets: [
-      "Completed hands-on training across Web3, blockchain fundamentals, and cryptocurrency workflows.",
-      "Strengthened practical skills in decentralized systems and smart-contract concepts for real product work.",
+      "Worked through SheFi Season 12 modules on Web3 fundamentals, DeFi workflows, and wallet-security concepts alongside the cohort.",
+      "Applied cohort lessons to how I review smart-contract logic and wallet-security assumptions in my own Solidity projects.",
     ],
   },
 ];

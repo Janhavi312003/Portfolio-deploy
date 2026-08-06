@@ -19,7 +19,9 @@ function XIcon({ size = 14 }) {
 const LINKS = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
+  { href: "#certifications", label: "Certifications" },
   { href: "#experience", label: "Experience" },
+  { href: "#hackathons", label: "Hackathons" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
@@ -42,16 +44,16 @@ export default function Footer() {
           <span className="truncate">Open to Work · Full-time Opportunities</span>
         </div>
 
-        {/* Nav links */}
+        {/* Nav links — stack on narrow phones, wrap on larger */}
         <nav
-          className="flex max-w-full flex-wrap items-center justify-center gap-x-5 gap-y-2"
+          className="flex max-w-full flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-5 sm:gap-y-2"
           aria-label="Footer"
         >
           {LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-ink-dim transition-colors duration-200 hover:text-ink"
+              className="min-h-11 inline-flex items-center text-sm text-ink-dim transition-colors duration-200 hover:text-ink"
             >
               {link.label}
             </a>
@@ -64,7 +66,7 @@ export default function Footer() {
             href={personalData.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="social-btn !h-9 !w-9"
+            className="social-btn !h-11 !w-11"
             aria-label="GitHub"
           >
             <Github size={16} strokeWidth={2} />
@@ -73,7 +75,7 @@ export default function Footer() {
             href={personalData.linkedIn}
             target="_blank"
             rel="noopener noreferrer"
-            className="social-btn !h-9 !w-9"
+            className="social-btn !h-11 !w-11"
             aria-label="LinkedIn"
           >
             <Linkedin size={16} strokeWidth={2} />
@@ -82,14 +84,14 @@ export default function Footer() {
             href={personalData.twitter}
             target="_blank"
             rel="noopener noreferrer"
-            className="social-btn !h-9 !w-9"
+            className="social-btn !h-11 !w-11"
             aria-label="X"
           >
             <XIcon size={14} />
           </Link>
           <a
             href={`mailto:${personalData.email}`}
-            className="social-btn !h-9 !w-9"
+            className="social-btn !h-11 !w-11"
             aria-label="Email"
           >
             <Mail size={16} strokeWidth={2} />

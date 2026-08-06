@@ -78,11 +78,11 @@ export default function Contact() {
                 maxLength={100}
                 required
                 placeholder=" "
-                className="peer min-h-12 w-full rounded-xl border border-white/10 bg-white/5 px-4 pb-2.5 pt-6 text-base text-ink outline-none transition-colors duration-200 focus:border-violet-400/60"
+                className="peer min-h-11 w-full rounded-xl border border-white/10 bg-white/5 px-4 pb-2.5 pt-6 text-base text-ink outline-none transition-colors duration-200 focus:border-accent-coral/60"
               />
               <label
                 htmlFor="contact-name"
-                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-ink-dim transition-all duration-200 peer-focus:top-2.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-accent-cyan peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs"
+                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-ink-dim transition-all duration-200 peer-focus:top-2.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-accent-gold peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs"
               >
                 Your Name
               </label>
@@ -96,11 +96,11 @@ export default function Contact() {
                 maxLength={100}
                 required
                 placeholder=" "
-                className="peer min-h-12 w-full rounded-xl border border-white/10 bg-white/5 px-4 pb-2.5 pt-6 text-base text-ink outline-none transition-colors duration-200 focus:border-violet-400/60"
+                className="peer min-h-11 w-full rounded-xl border border-white/10 bg-white/5 px-4 pb-2.5 pt-6 text-base text-ink outline-none transition-colors duration-200 focus:border-accent-coral/60"
               />
               <label
                 htmlFor="contact-email"
-                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-ink-dim transition-all duration-200 peer-focus:top-2.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-accent-cyan peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs"
+                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm text-ink-dim transition-all duration-200 peer-focus:top-2.5 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:text-accent-gold peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:text-xs"
               >
                 Your Email
               </label>
@@ -114,11 +114,11 @@ export default function Contact() {
                 required
                 rows={5}
                 placeholder=" "
-                className="peer min-h-[9rem] w-full resize-y rounded-xl border border-white/10 bg-white/5 px-4 pb-2.5 pt-7 text-base text-ink outline-none transition-colors duration-200 focus:border-violet-400/60"
+                className="peer min-h-[9rem] w-full resize-y rounded-xl border border-white/10 bg-white/5 px-4 pb-2.5 pt-7 text-base text-ink outline-none transition-colors duration-200 focus:border-accent-coral/60"
               />
               <label
                 htmlFor="contact-message"
-                className="pointer-events-none absolute left-4 top-4 text-sm text-ink-dim transition-all duration-200 peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent-cyan peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:text-xs"
+                className="pointer-events-none absolute left-4 top-4 text-sm text-ink-dim transition-all duration-200 peer-focus:top-2.5 peer-focus:text-xs peer-focus:text-accent-gold peer-[:not(:placeholder-shown)]:top-2.5 peer-[:not(:placeholder-shown)]:text-xs"
               >
                 Your Message
               </label>

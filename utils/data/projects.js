@@ -22,9 +22,8 @@ export const projects = [
     role: "Sole full-stack & smart-contract developer — designed the UI in Next.js, wrote Solidity contracts, wired wallet flows with Wagmi, and deployed the dApp to Vercel on Base Sepolia.",
     image:
       "https://images.unsplash.com/photo-1620200423727-8127f75d7f53?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWdyaWN1bHR1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=500",
-    // TODO: replace placeholder GitHub URL with the real AgriChain repo
     repo: "https://github.com/Janhavi312003/AgriChain",
-    live: "https://agri-chain-237kxxjmg-janhavis-projects-94ce3bb4.vercel.app/",
+    live: "https://agri-chain-seven.vercel.app/",
     techStack: ["Next.js", "Solidity", "Tailwind CSS", "Wagmi"],
     features: [
       "On-chain listing and purchase flows for agricultural products",
@@ -209,7 +208,6 @@ export const projects = [
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=60&w=500",
     repo: "https://github.com/Janhavi312003/nest-backend",
     live: "",
-    // TODO: confirm DB used — Mongo or Postgres
     techStack: ["NestJS", "TypeScript"],
     features: [
       "Modular NestJS project structure",
