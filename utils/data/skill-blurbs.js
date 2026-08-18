@@ -6,7 +6,7 @@ export const skillBlurbs = {
   React: "Component model behind AgriChain, Token Swap, Todo List, and this site.",
   "Next.js":
     "My default full-stack framework — AgriChain, Token Swap, Todo List, Weather App, and this portfolio.",
-  Tailwind:
+  "Tailwind CSS":
     "Utility-first styling for faster UI iteration on AgriChain, this portfolio, and other Next.js apps.",
   "Shadcn/UI":
     "Component primitives for this portfolio's UI — buttons, cards, and the hover panel.",
@@ -29,14 +29,17 @@ export const skillBlurbs = {
     "Wallet connect flow for AgriChain and ChainPay demos.",
   IPFS:
     "Storing AgriChain's off-chain metadata via Pinata/IPFS instead of on-chain.",
-  Prisma:
-    "ORM layer for Nest Backend's database models and queries.",
+  Python:
+    "Backend language for Ragora's PDF processing, embedding pipeline, and API services.",
+  FastAPI:
+    "Layered API backend for Ragora, organized through routers, services, and Prisma.",
+  "Prisma ORM": "ORM layer for Ragora and Nest Backend database models and queries.",
   MongoDB:
     "Document store behind Nest Backend for flexible, schema-light data.",
-  MySQL:
-    "Relational data for practice projects needing structured, query-heavy storage.",
-  Postgresql:
-    "Used with the Timchain Labs stack (SvelteKit + PostgreSQL) during the blockchain internship.",
+  PostgreSQL:
+    "Relational database used with pgvector for Ragora's document embeddings and search.",
+  pgvector:
+    "Vector storage and similarity search for Ragora's processed PDF content.",
 
   Git: "Version control across internship work and every personal project repo.",
   GitHub: "Where all my project code lives — AgriChain, ChainPay, Token Swap, and more.",

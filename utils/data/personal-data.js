@@ -17,7 +17,7 @@ export const personalData = {
   heroIntro:
     "Full-stack interfaces, smart contracts, and AI-assisted product features — built to feel intentional and put real thought into.",
   about:
-    "I have a Master's in Blockchain Technology and a habit of building things — full-stack apps, smart contracts, dApps like AgriChain and ChainPay, built with React, Solidity, and Next.js. At Timchain Labs I learned how wallet auth and REST APIs actually behave in production, not just in tutorials. I'm looking for an entry-level Full Stack or Blockchain role where I can keep building like this, alongside people who'll push my work further.",
+    "I have a Master's in Blockchain Technology and a habit of building things — full-stack apps, backend services, smart contracts, and dApps like AgriChain and ChainPay using React, Next.js, Solidity, Node.js, and REST APIs. At Timchain Labs, I worked with wallet authentication and APIs in a real development environment, which taught me how systems behave beyond tutorials. I'm currently strengthening my backend skills — working with APIs, databases, server-side development, and building complete applications end to end. I'm looking for an entry-level Full Stack, Backend, or Blockchain role where I can build real products, learn from strong engineers, and keep pushing my work further.",
   github: "https://github.com/Janhavi312003",
   linkedIn: "https://www.linkedin.com/in/janhavi-sonurkar-134a70288",
   twitter: "https://x.com/JSonurkar?t=cWLuVoRFXC3hD3r6TxbzJw&s=09",

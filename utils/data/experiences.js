@@ -4,30 +4,25 @@ export const experienceArc =
 export const experiences = [
   {
     id: 1,
-    title: "Frontend Developer",
+    title: "Rookie Developer and Contributor",
     company: "Timchain Labs",
-    duration: "3 Months",
+    duration: "Jun 2024 - Sep 2024 (4 Months)",
     // First-person reflection — replace "" with your real line (1–2 sentences). Leave empty to hide the quote slot.
     reflection: "",
     bullets: [
-      "Owned React UI work across key product flows — responsive layouts and interactions that made core screens usable on real devices.",
-      "Built the Neucron Wallet integration from scratch, giving users a working path to connect and transact on-chain directly from the frontend.",
-      "Collaborated in Jira and Figma to iterate UI components and keep design-to-code handoffs aligned with the team.",
-      "Connected REST APIs to replace static content with live data across the app's core views.",
+      "Contributed to frontend and blockchain development tasks as part of the Time Chain Summer of Code 2024 program powered by BVS.",
+      "Worked with NestJS and blockchain technologies while collaborating on practical product features and development workflows.",
     ],
   },
   {
     id: 2,
     title: "Blockchain Developer",
     company: "Timchain Labs",
-    duration: "4 Months",
+    duration: "Sep 2024 - Oct 2024 (2 Months)",
     reflection: "",
     bullets: [
-      "Built a full-stack decentralized news portal on BSV with secure publishing and blockchain payment gateways for subscribers.",
-      "Designed wallet-balance and subscription tiers with on-chain smart-contract logic so access stayed tied to payment state, not just database records.",
-      "Built on BSV to stay aligned with Timchain's Neucron Wallet stack — keeping publishing, payments, and wallet flows on one chain instead of splitting them across layers.",
-      "Delivered the stack with SvelteKit, TypeScript, and PostgreSQL, then deployed on Vercel for production demos and stakeholder review.",
-      "Integrated Neucron Wallet so end users could pay for subscriptions with secure on-chain transactions from the app.",
+      "Completed a blockchain development internship at Timchain Labs, working remotely from India.",
+      "Developed practical Web3 skills, including Prisma ORM, through the Time Chain Summer of Code 2024 program powered by BVS.",
     ],
   },
   {

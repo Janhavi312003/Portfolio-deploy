@@ -56,49 +56,59 @@ export const projects = [
   },
   {
     id: 2,
-    slug: "ico-market",
-    name: "ICO Market",
-    tagline: "Browse, buy, and track token offerings with on-chain purchase logic",
-    category: "Blockchain",
+    slug: "ragora",
+    name: "Ragora",
+    tagline: "Knowledge-base platform that turns PDFs into searchable vector embeddings",
+    category: "Full Stack / AI",
     description:
-      "A decentralized ICO/token-sale platform where users can browse, buy, and track token offerings on-chain, with smart-contract-based purchase logic and real-time market data.",
+      "A full-stack knowledge-base platform where users upload PDFs and search their content through vector embeddings.",
     fullDescription: [
-      "ICO Market is a decentralized token-sale platform where users can discover offerings, participate in purchases, and track sale progress through smart-contract-backed flows.",
-      "It addresses the need for a clearer, developer-owned ICO demo experience — connecting a Next.js front end to Solidity sale logic instead of relying on opaque off-chain checkout.",
-      "Built for Web3 learners, recruiters reviewing dApp skills, and anyone evaluating how token-sale UX can sit on top of Hardhat-deployed contracts.",
+      "Ragora is a full-stack knowledge-base platform that lets users upload PDFs, process their contents into searchable vector embeddings, and manage documents from a protected dashboard.",
+      "Its layered FastAPI backend routes requests through routers, services, and Prisma to PostgreSQL with pgvector. The document pipeline extracts text with pypdf, chunks it, generates embeddings with Sentence Transformers, and stores the results for search.",
+      "The Next.js and TypeScript frontend uses a custom dark design-token system, authentication context, protected routes, and live document-status tracking.",
     ],
-    role: "Built the full stack — Solidity sale contracts with Hardhat, Next.js UI, and Web3.js wiring for browse/buy/track interactions.",
+    role: "Built the full-stack platform across its FastAPI and PostgreSQL backend, vector-search document pipeline, and Next.js dashboard.",
     image:
-      "https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&q=60&w=500",
-    repo: "https://github.com/Janhavi312003/ICO_Market",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=60&w=500",
+    repo: "https://github.com/Janhavi312003/Ragora",
     live: "",
-    techStack: ["Solidity", "Next.js", "Web3.js", "Hardhat"],
+    techStack: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "pgvector",
+      "Prisma",
+      "Sentence Transformers",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
     features: [
-      "Browse available token offerings from the dApp UI",
-      "Smart-contract-based purchase participation",
-      "On-chain tracking of sale-related state",
-      "Hardhat toolchain for compile, test, and deploy workflows",
-      "Next.js front end integrated with Web3.js",
-      "Modular structure separating contracts from UI",
+      "PDF upload and processing into searchable vector embeddings",
+      "Layered FastAPI backend with router, service, and Prisma data layers",
+      "pypdf extraction, chunking, Sentence Transformer embeddings, and pgvector storage",
+      "JWT authentication with bcrypt password hashing",
+      "Ownership-checked REST endpoints for documents and user data",
+      "Protected Next.js routes and a dashboard with live document-status tracking",
     ],
     challenges: [
       {
         challenge:
-          "Keeping front-end numbers (raised amount, remaining allocation) in sync with contract state after each purchase.",
+          "Turning uploaded PDFs into content that could be searched accurately and efficiently.",
         solution:
-          "Re-fetched contract views after confirmed transactions and treated chain data as the source of truth instead of optimistic-only UI math.",
+          "Built a pipeline that extracts text with pypdf, splits it into chunks, generates embeddings with Sentence Transformers, and stores them in PostgreSQL through pgvector.",
       },
       {
         challenge:
-          "Handling Web3.js provider edge cases when users switched accounts or networks mid-flow.",
+          "Keeping documents and API resources private to their owners.",
         solution:
-          "Listened for account/network changes and reset sale context so users couldn't submit a tx against the wrong chain state.",
+          "Implemented JWT authentication, bcrypt password hashing, and ownership checks on REST endpoints before returning or modifying document data.",
       },
       {
         challenge:
-          "Structuring Hardhat artifacts so the Next.js app could reliably import ABIs after redeploys.",
+          "Making asynchronous document processing visible and understandable in the frontend.",
         solution:
-          "Standardized an ABI/address export path from the Hardhat project into the front-end config after each deployment.",
+          "Built protected dashboard views with auth context and live document-status tracking so users can follow each upload through processing.",
       },
     ],
   },
